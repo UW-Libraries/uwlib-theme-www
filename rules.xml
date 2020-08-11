@@ -14,6 +14,20 @@
 	<notheme if-path="anchor.htm"/> 
 	<notheme if-path="table.htm"/> 
 	<notheme if-path="attributes.htm"/>
+	
+	<drop css:content="#breadcrumbs-you-are-here"/>
+	<drop css:content=".documentActions"/>
+	<drop content="//fieldset[@id='relatedItemBox']"/>
+	<drop css:content="#category"/>
+	<drop theme="/html/head/link"/>
+	<drop theme="/html/head/script"/>
+	<!-- Pull in Plone files -->
+	<before css:theme-children="head" content="/html/head/link | /html/head/style" />
+	<before css:theme-children="head" content="/html/head/script"/>
+	<before css:theme-children="head" content="/html/head/meta"/>
+
+	<replace css:theme="title" css:content="title"/>
+	<merge attributes="class" css:content="body" css:theme="body"/>
 
 	<!-- define theme template for homepage -->
 	<theme href="default.html" css:if-content="body.section-homepage" />
@@ -23,19 +37,6 @@
 	<rules css:if-content="#visual-portal-wrapper">
 		<!-- define theme template for all other pages -->
 		<theme href="theme.html"/>
-		<drop css:content="#breadcrumbs-you-are-here"/>
-		<drop css:content=".documentActions"/>
-		<drop content="//fieldset[@id='relatedItemBox']"/>
-		<drop css:content="#category"/>
-		<drop theme="/html/head/link"/>
-		<drop theme="/html/head/script"/>
-		<!-- Pull in Plone files -->
-		<before css:theme-children="head" content="/html/head/link | /html/head/style" />
-		<before css:theme-children="head" content="/html/head/script"/>
-	  	<before css:theme-children="head" content="/html/head/meta"/>
-		
-		<replace css:theme="title" css:content="title"/>
-		<merge attributes="class" css:content="body" css:theme="body"/>
 		
 		<!--if left OR right portlet column exists, replace contents, otherwise drop from theme-->
 		<replace css:theme-children="#side-navigation" css:content-children="#portal-column-one" css:if-content="#portal-column-one"/>
