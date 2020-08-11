@@ -7219,16 +7219,6 @@ span.maplink {
   background: url("../img/globe-bg.jpg") no-repeat fixed center 30px #312d1e;
   min-height: 470px;
   padding-top: 2em;
-  left: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  max-width: 100vw;
-  right: 50%;
-  width: 100vw;
-}
-.section-homepage #collage .collage-first-row .collage-item {
-  margin-left: 5%;
-  margin-right: 5%;
 }
 .section-homepage #collage .aligned-row {
   display: flex;

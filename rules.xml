@@ -16,13 +16,13 @@
 	<notheme if-path="attributes.htm"/>
 
 	<!-- define theme template for homepage -->
-	<theme href="default.html" css:if-content=".section-homepage"/>
+	<theme href="default.html" css:if-content="body.section-homepage"/>
 	
 	<!-- define theme template for all other pages -->
 	<theme href="theme.html"/>
 
 	<!-- MAIN THEME applies only to content pages-->
-	<rules>
+	<rules css:if-content="#visual-portal-wrapper">
 		<drop css:content="#breadcrumbs-you-are-here"/>
 		<drop css:content=".documentActions"/>
 		<drop content="//fieldset[@id='relatedItemBox']"/>
