@@ -4,8 +4,9 @@
 .section-homepage {
 	#header_home {
 		position: relative;
-		background: url("../img/globe-bg.jpg") no-repeat fixed center 45px @uw-purple;
+		background-color: @uw-purple;
 	}
+	#portal-breadcrumbs {display: none;}
 	#search-main {
 		color: #fff;
 		margin-top: .5em;
@@ -77,6 +78,36 @@
 		ul {margin-left: 0px; padding: 5px;}
 		li {font-size: @font-size-small; margin-bottom: .25em; list-style: none;}	
 	}
+	#collage .collage-first-row {
+		position: relative;
+		background: url("../img/globe-bg.jpg") no-repeat fixed center 30px #312D1E;
+		min-height: 470px;
+		padding-top: 2em;
+	}
+	/* 4 Tiles for COVID Era Quick Links */
+	#collage .aligned-row {
+		display: flex;
+	  flex-wrap: wrap;
+	}
+	#collage .aligned-row h3 {
+		font-size: 1em;
+	}
+	#collage .aligned-row p {
+		font-size: .9em;
+	}
+	#collage .aligned-row a {
+		color: @white;
+	}
+	#collage .aligned-row .col-md-3 {
+		background-color: @uw-purple; 
+		text-align: center;
+		padding: 1rem;
+		border: 10px solid @white;
+	}
+	#collage .row_2, #collage .row_3, #collage .row_4 {
+		max-width: 1120px; 
+		margin: auto;
+	}
 	footer {
 			background: @bg-tan;
 			color: @gray-dark;
@@ -113,26 +144,14 @@
 		#header_home {
 			position: relative;
 			z-index: 2;
-			background-position: center 30px;
-			background-color: #312D1E;
-			min-height: 400px;
-			#search-main {
-				width: 80%;
-				margin: 3em auto;
-				.search-query {width: 80%;}
-			}
 		}
-		#header_home:after {
-			bottom: 0px;
-			height: 30px;
-			width: 100%;
-			margin-left: -20px;
-			content: "";
-			background: url("../img/stripes-dark-tile.png") repeat scroll 0% 0% transparent;
-			opacity: 0.3;
-		}
-		
+
 		#collage {padding: 0;}
+		#search-main {
+			width: 80%;
+			margin: 3em auto;
+			.search-query {width: 80%;}
+		}
 		#topservices {
 			float: right;
 			h3 a {
