@@ -16,31 +16,17 @@
 	<notheme if-path="attributes.htm"/>
 
 	<!-- define theme template for homepage -->
-	<rules if-path="/ /homepage">
+	<rules if-path="/">
 		<theme href="default.html"/>
-		<drop css:content="#breadcrumbs-you-are-here"/>
-		<drop css:content=".documentActions"/>
-		<drop content="//fieldset[@id='relatedItemBox']"/>
-		<drop css:content="#category"/>
-		<drop theme="/html/head/link"/>
-		<drop theme="/html/head/script"/>
-		<!-- Pull in Plone files -->
-		<before css:theme-children="head" content="/html/head/link | /html/head/style" />
-		<before css:theme-children="head" content="/html/head/script"/>
-		<before css:theme-children="head" content="/html/head/meta"/>
-
 		<replace css:theme="title" css:content="title"/>
 		<merge attributes="class" css:content="body" css:theme="body"/>
-		
-		<!--insert main content-->
-		<replace css:theme-children="#main-content" css:content-children="#portal-column-content"/>
 	</rules>
 	
 	
 	
 
 	<!-- MAIN THEME applies only to content pages-->
-	<rules if-not-path="/ /homepage">
+	<rules if-not-path="/">
 		<!-- define theme template for all other pages -->
 		<theme href="theme.html"/>
 		<drop css:content="#breadcrumbs-you-are-here"/>
@@ -50,9 +36,9 @@
 		<drop theme="/html/head/link"/>
 		<drop theme="/html/head/script"/>
 		<!-- Pull in Plone files -->
-		<before css:theme-children="head" content="/html/head/link | /html/head/style" />
-		<before css:theme-children="head" content="/html/head/script"/>
-		<before css:theme-children="head" content="/html/head/meta"/>
+		<before theme-children="/html/head" content="/html/head/link | /html/head/style" />
+		<before theme-children="/html/head" content="/html/head/script"/>
+		<before theme-children="/html/head" content="/html/head/meta"/>
 
 		<replace css:theme="title" css:content="title"/>
 		<merge attributes="class" css:content="body" css:theme="body"/>
