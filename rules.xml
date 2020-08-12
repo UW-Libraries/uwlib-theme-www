@@ -15,8 +15,10 @@
 	<notheme if-path="table.htm"/> 
 	<notheme if-path="attributes.htm"/>
 
-	
-	
+	<rules if-path="/">
+		<!-- define theme template for homepage -->
+		<theme href="default.html"/>
+	</rules>
 	
 
 	<!-- MAIN THEME applies only to content pages-->
