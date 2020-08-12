@@ -18,6 +18,7 @@
 	<rules if-path="/">
 		<!-- define theme template for homepage -->
 		<theme href="default.html"/>
+		<merge attributes="class" css:content="body" css:theme="body"/>
 	</rules>
 	
 
