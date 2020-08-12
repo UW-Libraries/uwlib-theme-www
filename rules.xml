@@ -16,13 +16,33 @@
 	<notheme if-path="attributes.htm"/>
 
 	<!-- define theme template for homepage -->
-	<theme href="default.html" css:if-content="body.section-homepage"/>
+	<rules if-path="/ /homepage">
+		<theme href="default.html"/>
+		<drop css:content="#breadcrumbs-you-are-here"/>
+		<drop css:content=".documentActions"/>
+		<drop content="//fieldset[@id='relatedItemBox']"/>
+		<drop css:content="#category"/>
+		<drop theme="/html/head/link"/>
+		<drop theme="/html/head/script"/>
+		<!-- Pull in Plone files -->
+		<before css:theme-children="head" content="/html/head/link | /html/head/style" />
+		<before css:theme-children="head" content="/html/head/script"/>
+		<before css:theme-children="head" content="/html/head/meta"/>
+
+		<replace css:theme="title" css:content="title"/>
+		<merge attributes="class" css:content="body" css:theme="body"/>
+		
+		<!--insert main content-->
+		<replace css:theme-children="#main-content" css:content-children="#portal-column-content"/>
+	</rules>
 	
-	<!-- define theme template for all other pages -->
-	<theme href="theme.html"/>
+	
+	
 
 	<!-- MAIN THEME applies only to content pages-->
-	<rules css:if-content="#visual-portal-wrapper">
+	<rules if-not-path="/ /homepage">
+		<!-- define theme template for all other pages -->
+		<theme href="theme.html"/>
 		<drop css:content="#breadcrumbs-you-are-here"/>
 		<drop css:content=".documentActions"/>
 		<drop content="//fieldset[@id='relatedItemBox']"/>
