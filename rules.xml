@@ -18,6 +18,11 @@
 	<rules if-path="/">
 		<!-- define theme template for homepage -->
 		<theme href="homepage.html"/>
+		<!-- Pull in Plone files -->
+		<before theme-children="/html/head" content="/html/head/link" />
+		<before theme-children="/html/head" content="/html/head/style" />
+		<before theme-children="/html/head" content="/html/head/script"/>
+		<before theme-children="/html/head" content="/html/head/meta"/>
 		<merge attributes="class" css:content="body" css:theme="body"/>
 		<!--insert main content-->
 		<replace css:theme-children="#main-content" css:content-children="#portal-column-content"/>
