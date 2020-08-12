@@ -15,12 +15,6 @@
 	<notheme if-path="table.htm"/> 
 	<notheme if-path="attributes.htm"/>
 
-	<!-- define theme template for homepage -->
-	<rules if-path="/">
-		<theme href="default.html"/>
-		<replace css:theme="title" css:content="title"/>
-		<merge attributes="class" css:content="body" css:theme="body"/>
-	</rules>
 	
 	
 	
