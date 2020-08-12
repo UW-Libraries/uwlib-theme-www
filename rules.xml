@@ -7,54 +7,54 @@
 	<xsl:variable name="theme_url" select="concat($portal_url, '/++theme++uwlib.diazotheme/')"/>
 
 	<!--notheme for tinymce popups-->
-	<notheme if-path="presentation_view"/>
-	<notheme if-path="image_view_fullscreen "/>
-	<notheme if-path="source_editor.htm"/>
-	<notheme if-path="ploneimage.htm"/>
-	<notheme if-path="anchor.htm"/>
-	<notheme if-path="table.htm"/>
-	<notheme if-path="attributes.htm"/>
+	<notheme if-path="presentation_view" />
+	<notheme if-path="image_view_fullscreen" />
+	<notheme if-path="source_editor.htm" />
+	<notheme if-path="ploneimage.htm" />
+	<notheme if-path="anchor.htm" />
+	<notheme if-path="table.htm" />
+	<notheme if-path="attributes.htm" />
 
 	<rules if-path="/">
 		<!-- define theme template for homepage -->
-		<theme href="homepage.html"/>
-		<drop css:content=".documentActions"/>
-		<drop theme="/html/head/link"/>
-		<drop theme="/html/head/script"/>
+		<theme href="homepage.html" />
+		<drop css:content=".documentActions" />
 		<!-- Pull in Plone files -->
 		<before theme-children="/html/head" content="/html/head/link | /html/head/style" />
-		<before theme-children="/html/head" content="/html/head/script"/>
-		<before theme-children="/html/head" content="/html/head/meta"/>
-		<merge attributes="class" css:content="body" css:theme="body"/>
+		<before theme-children="/html/head" content="/html/head/script" />
+		<before theme-children="/html/head" content="/html/head/meta" />
+		<drop theme="/html/head/link" />
+		<drop theme="/html/head/script" />
+		<merge attributes="class" css:content="body" css:theme="body" />
 		<!--insert main content-->
-		<replace css:theme-children="#main-content" css:content-children="#portal-column-content"/>
+		<replace css:theme-children="#main-content" css:content-children="#portal-column-content" />
 	</rules>
 
 
 	<!-- MAIN THEME applies only to content pages-->
 	<rules if-not-path="/">
 		<!-- define theme template for all other pages -->
-		<theme href="theme.html"/>
-		<drop css:content="#breadcrumbs-you-are-here"/>
-		<drop css:content=".documentActions"/>
-		<drop content="//fieldset[@id='relatedItemBox']"/>
-		<drop css:content="#category"/>
-		<drop theme="/html/head/link"/>
-		<drop theme="/html/head/script"/>
+		<theme href="theme.html" />
+		<drop css:content="#breadcrumbs-you-are-here" />
+		<drop css:content=".documentActions" />
+		<drop content="//fieldset[@id='relatedItemBox']" />
+		<drop css:content="#category" />
+		<drop theme="/html/head/link" />
+		<drop theme="/html/head/script" />
 		<!-- Pull in Plone files -->
 		<before theme-children="/html/head" content="/html/head/link | /html/head/style" />
-		<before theme-children="/html/head" content="/html/head/script"/>
-		<before theme-children="/html/head" content="/html/head/meta"/>
+		<before theme-children="/html/head" content="/html/head/script" />
+		<before theme-children="/html/head" content="/html/head/meta" />
 
-		<replace css:theme="title" css:content="title"/>
-		<merge attributes="class" css:content="body" css:theme="body"/>
+		<replace css:theme="title" css:content="title" />
+		<merge attributes="class" css:content="body" css:theme="body" />
 
 		<!--if left OR right portlet column exists, replace contents, otherwise drop from theme-->
-		<replace css:theme-children="#side-navigation" css:content-children="#portal-column-one" css:if-content="#portal-column-one"/>
-		<drop css:theme="#side-navigation" css:if-not-content="#portal-column-one"/>
-		<drop css:theme="#sectiontitlebar .btn-offcanvas" css:if-not-content="#portal-column-one"/>
-		<replace css:theme-children="#secondary-content" css:content-children="#portal-column-two" css:if-content="#portal-column-two"/>
-		<drop css:theme="#secondary-content" css:if-not-content="#portal-column-two"/>
+		<replace css:theme-children="#side-navigation" css:content-children="#portal-column-one" css:if-content="#portal-column-one" />
+		<drop css:theme="#side-navigation" css:if-not-content="#portal-column-one" />
+		<drop css:theme="#sectiontitlebar .btn-offcanvas" css:if-not-content="#portal-column-one" />
+		<replace css:theme-children="#secondary-content" css:content-children="#portal-column-two" css:if-content="#portal-column-two" />
+		<drop css:theme="#secondary-content" css:if-not-content="#portal-column-two" />
 
 		<!--add size(class) of main-content column-->
 		<before css:theme-children="#main-content" method="raw">
@@ -79,15 +79,15 @@
 		</before>
 
 		<!--insert main content-->
-		<replace css:theme-children="#main-content" css:content-children="#portal-column-content"/>
+		<replace css:theme-children="#main-content" css:content-children="#portal-column-content" />
 
 		<!--inserts breadcrumbs inside main-content-->
-		<before css:theme-children="#main-content" css:content="#portal-breadcrumbs"/>
+		<before css:theme-children="#main-content" css:content="#portal-breadcrumbs" />
 
 		<!--add title to sectiontitlebar -->
-		<after theme-children="//div[@id='sectiontitlebar']/div" content="//span[@id='breadcrumbs-1']"/>
+		<after theme-children="//div[@id='sectiontitlebar']/div" content="//span[@id='breadcrumbs-1']" />
 
 		<!-- clean up unnecessary content classes/id-->
-		<drop attributes="class id" css:content="h1"/>
+		<drop attributes="class id" css:content="h1" />
 	</rules>
 </rules>
