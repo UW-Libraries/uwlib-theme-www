@@ -1,6 +1,8 @@
 
 
 /*HOMEPAGE*/
+/* remove weird space at top due to Plone rendering error */
+body > p:first-child {display: none;}
 .section-homepage {
 	#header_home {
 		position: relative;
@@ -97,16 +99,20 @@
 	/* 4 Tiles for COVID Era Quick Links */
 	#collage .aligned-row {
 		display: flex;
-	  flex-wrap: wrap;
+		flex-wrap: wrap;
 	}
 	#collage .aligned-row h3 {
-		font-size: 1em;
+		font-size: 1.3em;
 	}
 	#collage .aligned-row p {
 		font-size: .9em;
 	}
 	#collage .aligned-row a {
 		color: @white;
+		font-weight: normal;
+	}
+	#collage .aligned-row h3 a {
+		font-weight: bold;
 	}
 	#collage .aligned-row .col-md-3 {
 		background-color: @uw-purple; 
