@@ -15,7 +15,7 @@
 	<notheme if-path="table.htm" />
 	<notheme if-path="attributes.htm" />
 
-	<rules if-path="/">
+	<rules if-path="/ /homepage">
 		<!-- define theme template for homepage -->
 		<theme href="homepage.html" />
 		<drop css:content=".documentActions" />
@@ -32,7 +32,7 @@
 
 
 	<!-- MAIN THEME applies only to content pages-->
-	<rules if-not-path="/">
+	<rules if-not-path="/ /homepage">
 		<!-- define theme template for all other pages -->
 		<theme href="theme.html" />
 		<drop css:content="#breadcrumbs-you-are-here" />
