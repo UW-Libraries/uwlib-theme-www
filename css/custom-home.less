@@ -1,8 +1,6 @@
 
 
 /*HOMEPAGE*/
-/* remove weird space at top due to Plone rendering error */
-body > p:first-child {display: none;}
 .section-homepage {
 	#header_home {
 		position: relative;
@@ -13,35 +11,52 @@ body > p:first-child {display: none;}
 		color: #fff;
 		margin-top: .5em;
 		a {color: #fff;}
-		.nav {margin-bottom: 0;}
-		.nav-tabs {
+		
+		ul.tabs {
 			border: none; 
 			font-size: @font-size-small;
-			li {list-style: none; margin-bottom: 0;}
+			background: none;
+			height: 47px;
+			padding: 10px 10px 0 0;
+			li {
+				list-style: none; 
+				margin-bottom: 0;
+				background: none;
+				padding: 0;
+				a {
+					color: #333;
+					background-color: #ece9e2;
+					background-image: none;
+					border: none;
+					border-bottom-color: transparent;
+					cursor: default;
+					padding: 10px 5px;
+					margin-right: 3px;
+					border-radius: 4px 4px 0 0;
+				}
+			}
 		}
-		.nav-tabs > .active > a, .nav > li > a:hover, .nav > li > a:focus {
+		
+		.tabs > li.current > a, .tabs > li > a:hover, .tabs > li > a:focus {
 			color: #fff;
 			background-color: rgba(50,28,93,0.85);
 			border: none;
-			border-bottom-color: transparent;
 			cursor: default;
+			padding-bottom: 10px !important;
 		}
-		.nav-tabs > li > a {
-			color: #333;
-			background-color: #ece9e2;
+		 
+		.pane {
+			padding: 3.5em;
+			background: rgba(50,28,93,0.85);
 			border: none;
-			border-bottom-color: transparent;
-			cursor: default;
-			padding: 10px 5px;
+			input {color: #000;}
+			.homesrchadvan {font-size: @font-size-small; padding-top: 1em;}
 		}
+		
+		#searchFormPrimoNUI {background-color: transparent; padding: 0;}
 
 	}
-	#search-panes {
-		padding: 3.5em;
-		background: rgba(50,28,93,0.85);
-		input {color: #000;}
-		.homesrchadvan {font-size: @font-size-small; padding-top: 1em;}
-	}
+	
 	.main-content > * {padding: 0;}
 	.main-content {
 		h2 {margin: 1em 0;}	
