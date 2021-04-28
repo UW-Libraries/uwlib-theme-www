@@ -7229,8 +7229,8 @@ span.maplink {
 .section-homepage #services div {
   background: #E8E3D3;
   flex: 0 0 50%;
-  border-top: 5px solid white;
-  border-right: 5px solid white;
+  border-top: 10px solid white;
+  border-right: 10px solid white;
   padding: 5px;
 }
 .section-homepage #services img {
