@@ -46,7 +46,6 @@
 		}
 		 
 		.pane {
-			padding: 3.5em;
 			background: rgba(50,28,93,0.85);
 			border: none;
 			input {color: #000;}
@@ -62,42 +61,18 @@
 	#startmenu {
 		li {margin-bottom: 1.5em;}
 	}
-	#topservices {
-		h3 {
-			margin: 1px;
-			 a {
-				background-color: @uw-purple;
-				padding: 1em; 
-				display: block;
-				color: #fff;
-				line-height: @font-size-base * 1.25;
-				font-size: @font-size-base;
-				font-weight: normal;
-				i {font-style: normal;}
-			}
-			
-		}
+	
+	#collage .row_2, #collage .row_3, #collage .row_4, #collage .row_5, #collage .row_6, #search-main {
+		max-width: 1120px; 
+		margin: auto;
 	}
-	#spotlight-links{
-		#spotlight-img {
-			overflow-y:hidden; 
-			max-height: 230px; 
-			margin: 0;
-			img {max-width: 100%;}
-			} 
-		p {margin-bottom: 1.5em;}
+	#collage .collage-row:nth-child(odd) {
+    	background: #eee;
 	}
-	#portal-menu {
-		.panel-heading {background-color: @bg-light;}
-		.panel-body {background: url("../img/portal-bg.jpg") no-repeat center center;}
-		ul {margin-left: 0px; padding: 5px;}
-		li {font-size: @font-size-small; margin-bottom: .25em; list-style: none;}	
-	}
+	/* Search row */
 	#collage .collage-first-row {
 	  position: relative;
-	  background: url("../img/globe-bg.jpg") no-repeat fixed center 30px #312D1E;
-	  min-height: 470px;
-	  padding-top: 2em;
+	  background: url("../img/globe-bg.jpg") no-repeat fixed center 0px #312D1E;
 	  left: 50%;
 	  margin-left: -50vw;
 	  margin-right: -50vw;
@@ -109,34 +84,56 @@
 		margin-left: 5%;
 		margin-right: 5%;
 	}
-	/* 4 Tiles for COVID Era Quick Links */
-	#collage .aligned-row {
+	/* Tiles for COVID Era Quick Links */
+	#services {
 		display: flex;
 		flex-wrap: wrap;
+		padding-top: 4em;
+		h3 {
+			font-size:1.3em; 
+			color: @link-color;
+			text-align: center;
+		}
+		p.desc {
+			font-size: .9em;
+			font-weight: normal;
+			margin-left: 55px;
+			display: none;
+		}
+		div {
+			background: @bg-tan;
+    		flex: 0 0 50%;
+    		border-top: 5px solid white;
+    		border-right:5px solid white;
+    		padding: 5px;
+		}
+		img {
+    		width: 45px;
+   	 		margin: auto;
+			display: block;
+		}
 	}
-	#collage .aligned-row h3 {
+	.row_3 img, .row_6 img {max-height: 200px;}
+	
+	h2 {text-align: center;}
+	
+	#event-cal {
+    	max-width: 600px;
+    	margin: 1em auto;
+	}
+
+	#event-cal th {
+		color: @fg-tan;
 		font-size: 1.3em;
-	}
-	#collage .aligned-row p {
-		font-size: .9em;
-	}
-	#collage .aligned-row a {
-		color: @white;
-		font-weight: normal;
-	}
-	#collage .aligned-row h3 a {
-		font-weight: bold;
-	}
-	#collage .aligned-row .col-md-3 {
-		background-color: @uw-purple; 
+		text-transform: uppercase;
 		text-align: center;
-		padding: 1rem;
-		border: 10px solid @white;
+		padding: 1em;
 	}
-	#collage .row_2, #collage .row_3, #collage .row_4 {
-		max-width: 1120px; 
-		margin: auto;
-	}
+
+	#event-cal td {padding: 1em;}
+
+	.section {border-left: #eee 5px solid; padding-left: 15px;}
+	
 	footer {
 			background: @bg-tan;
 			color: @gray-dark;
@@ -177,37 +174,7 @@
 
 		#collage {padding: 0;}
 		#search-main {
-			margin: 3em auto;
 			.search-query {width: 80%;}
-		}
-		#topservices {
-			float: right;
-			h3 a {
-				padding-top: 110px;
-				background: url("../img/topservices-sprite.jpg") no-repeat 0 0 @uw-purple;
-				margin: .5em 0px;
-				i {
-					display: block; 
-					text-transform: uppercase; 
-					font-size: @font-size-base * 1.75;
-				}
-			}
-			.hours {
-				padding-right: 0;
-				h3 a {background-position: 0 0;}
-			}
-			.space {
-				padding-left: 0;
-				h3 a {background-position: -300px 0;}
-			}
-			.tech {
-				padding-right: 0;
-				h3 a {background-position: -600px 0;}
-			}
-			.yla {
-				padding-left: 0;
-				h3 a {background-position: -900px 0;}
-			}
 		}
 		#portal-menu {
 			padding: 0 1em;
@@ -216,6 +183,17 @@
 			li {margin: 1.5em 0;}
 		}
 		#spotlight {border-top: 1px dotted #ccc;}
+		#services {
+			p.desc {display: block;}
+			img {
+   	 			margin: -30px 5px;
+    			float: left;
+			}
+			h3 {
+				text-align: left;
+				margin-left: 55px;
+			}
+		}
 	}
 }
 @media (min-width: @screen-md-min) {
