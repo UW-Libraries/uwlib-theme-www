@@ -1200,7 +1200,7 @@ h6,
 .h5,
 .h6 {
   font-family: inherit;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.1;
   color: inherit;
 }
@@ -1284,15 +1284,15 @@ h1,
 }
 h2,
 .h2 {
-  font-size: 30px;
+  font-size: 23px;
 }
 h3,
 .h3 {
-  font-size: 24px;
+  font-size: 18px;
 }
 h4,
 .h4 {
-  font-size: 18px;
+  font-size: 14px;
 }
 h5,
 .h5 {
@@ -7026,19 +7026,25 @@ h1 {
   font-size: 36px;
 }
 h2 {
-  font-size: 30px;
+  font-size: 23px;
 }
 h3 {
-  font-size: 24px;
+  font-size: 18px;
 }
 h4 {
-  font-size: 18px;
+  font-size: 14px;
 }
 h1,
 h2,
 h3 {
   color: #8E632A;
   font-weight: normal;
+}
+h2,
+h3,
+h4 {
+  text-transform: uppercase;
+  font-weight: bold;
 }
 #main-content a {
   font-weight: bold;
@@ -7177,9 +7183,6 @@ span.maplink {
 .section-homepage .main-content > * {
   padding: 0;
 }
-.section-homepage #startmenu li {
-  margin-bottom: 1.5em;
-}
 .section-homepage #collage .row_2,
 .section-homepage #collage .row_3,
 .section-homepage #collage .row_4,
@@ -7192,7 +7195,7 @@ span.maplink {
 .section-homepage #collage .collage-row:nth-child(odd) {
   background: #eee;
 }
-.section-homepage #collage .collage-first-row {
+.section-homepage #collage .row_1 {
   position: relative;
   background: url("../img/globe-bg.jpg") no-repeat fixed center 0px #312D1E;
   left: 50%;
@@ -7202,14 +7205,17 @@ span.maplink {
   right: 50%;
   width: 100vw;
 }
-.section-homepage #collage .collage-first-row .collage-item {
-  margin-left: 5%;
-  margin-right: 5%;
+.section-homepage .row_2,
+.section-homepage .row_3,
+.section-homepage .row_4,
+.section-homepage .row_5,
+.section-homepage .row_6 {
+  padding: 2em 0;
+  overflow: hidden;
 }
 .section-homepage #services {
   display: flex;
   flex-wrap: wrap;
-  padding-top: 4em;
 }
 .section-homepage #services h3 {
   font-size: 1.3em;
@@ -7236,8 +7242,10 @@ span.maplink {
 }
 .section-homepage .row_3 img,
 .section-homepage .row_6 img {
-  max-width: 100px;
+  max-width: 130px;
   float: left;
+  clear: both;
+  margin: 0 5px 0 0;
 }
 .section-homepage h2 {
   text-align: center;
@@ -7326,6 +7334,13 @@ span.maplink {
     max-width: none;
     float: none;
   }
+  .section-homepage .row_3 p,
+  .section-homepage .row_6 p {
+    text-align: center;
+  }
+  .section-homepage #services {
+    padding-top: 4em;
+  }
   .section-homepage #services p.desc {
     display: block;
   }
@@ -7336,11 +7351,6 @@ span.maplink {
   .section-homepage #services h3 {
     text-align: left;
     margin-left: 55px;
-  }
-}
-@media (min-width: 992px) {
-  #navbar-menu {
-    margin-top: 65px;
   }
 }
 table.invisible {

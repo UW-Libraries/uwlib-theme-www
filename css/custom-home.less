@@ -51,16 +51,10 @@
 			input {color: #000;}
 			.homesrchadvan {font-size: @font-size-small; padding-top: 1em;}
 		}
-		
 		#searchFormPrimoNUI {background-color: transparent; padding: 0;}
-
 	}
 	
 	.main-content > * {padding: 0;}
-	
-	#startmenu {
-		li {margin-bottom: 1.5em;}
-	}
 	
 	#collage .row_2, #collage .row_3, #collage .row_4, #collage .row_5, #collage .row_6, #search-main {
 		max-width: 1120px; 
@@ -70,7 +64,7 @@
     	background: #eee;
 	}
 	/* Search row */
-	#collage .collage-first-row {
+	#collage .row_1 {
 	  position: relative;
 	  background: url("../img/globe-bg.jpg") no-repeat fixed center 0px #312D1E;
 	  left: 50%;
@@ -80,15 +74,13 @@
 	  right: 50%;
 	  width: 100vw;
 	}
-	#collage .collage-first-row .collage-item {
-		margin-left: 5%;
-		margin-right: 5%;
-	}
+	.row_2, .row_3, .row_4, .row_5, .row_6 {padding: 2em 0; overflow: hidden;}
+	
 	/* Tiles for COVID Era Quick Links */
 	#services {
 		display: flex;
 		flex-wrap: wrap;
-		padding-top: 4em;
+		
 		h3 {
 			font-size:1.3em; 
 			color: @link-color;
@@ -113,7 +105,12 @@
 			display: block;
 		}
 	}
-	.row_3 img, .row_6 img {max-width: 100px; float: left;}
+	.row_3 img, .row_6 img {
+		max-width: 130px; 
+		float: left;
+		clear: both;
+		margin: 0 5px 0 0;
+	}
 	
 	h2 {text-align: center;}
 	
@@ -177,7 +174,9 @@
 			.search-query {width: 80%;}
 		}
 		.row_3 img, .row_6 img {max-height: 200px;max-width:none;float:none;}
+		.row_3 p, .row_6 p {text-align: center;}
 		#services {
+			padding-top: 4em;
 			p.desc {display: block;}
 			img {
    	 			margin: -30px 5px;
@@ -188,10 +187,5 @@
 				margin-left: 55px;
 			}
 		}
-	}
-}
-@media (min-width: @screen-md-min) {
-	#navbar-menu {
-		margin-top: 65px;
 	}
 }
