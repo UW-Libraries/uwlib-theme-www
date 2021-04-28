@@ -7236,7 +7236,8 @@ span.maplink {
 }
 .section-homepage .row_3 img,
 .section-homepage .row_6 img {
-  max-height: 200px;
+  max-width: 100px;
+  float: left;
 }
 .section-homepage h2 {
   text-align: center;
@@ -7319,15 +7320,11 @@ span.maplink {
   .section-homepage #search-main .search-query {
     width: 80%;
   }
-  .section-homepage #portal-menu {
-    padding: 0 1em;
-  }
-  .section-homepage #startmenu li,
-  .section-homepage #spotlight li {
-    margin: 1.5em 0;
-  }
-  .section-homepage #spotlight {
-    border-top: 1px dotted #ccc;
+  .section-homepage .row_3 img,
+  .section-homepage .row_6 img {
+    max-height: 200px;
+    max-width: none;
+    float: none;
   }
   .section-homepage #services p.desc {
     display: block;
