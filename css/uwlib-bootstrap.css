@@ -7190,7 +7190,7 @@ span.maplink {
   max-width: 1120px;
   margin: auto;
 }
-.section-homepage #collage .collage-row:nth-child(odd) {
+.section-homepage #collage .collage-row:nth-child(even) {
   background: #eee;
 }
 .section-homepage #collage .row_1 {
