@@ -5,6 +5,8 @@
 	#header_home {
 		position: relative;
 		background-color: @uw-purple;
+		color: #fff;
+
 	}
 	#portal-breadcrumbs {display: none;}
 	#search-main {
@@ -57,10 +59,16 @@
 
 	.main-content > * {padding: 0;}
 
-	#collage .row_2, #collage .row_3, #collage .row_4, #collage .row_5, #collage .row_6, #search-main {
+	#collage .row_2, #collage .row_3, #collage .row_4, #collage .row_5, #collage .row_6 {
 		max-width: 1120px;
 		margin: auto;
 	}
+
+	#search-main, #researchres {
+		margin: auto;
+		max-width: 850px;
+	}
+
 	#collage .collage-row:nth-child(odd) {
     	background: #eee;
 	}
@@ -72,6 +80,23 @@
 	  margin-right: -15px;
 	}
 	.row_1, .row_2, .row_3, .row_4, .row_5, .row_6 {padding: 2em 0; overflow: hidden;}
+
+  /* New for 2022 - Research Resources */
+	#researchres {
+		padding: 0 1em;
+	}
+	#researchres div {
+		background-color: #F5F3EF;
+		padding: 1em;
+	}
+	#researchres_title {
+    text-transform: none;
+    font-size: 16px;
+    text-align: left;
+    font-style: italic;
+		margin-top: 0;
+		color: #000;
+	}
 
 	/* Tiles for COVID Era Quick Links */
 	#services {
@@ -91,10 +116,13 @@
 		}
 		div {
 			background: @bg-tan;
-    		flex: 0 0 50%;
-    		border-top: 10px solid white;
-    		border-right:10px solid white;
-    		padding: 5px;
+			flex-grow: 0;
+			flex-shrink: 0;
+			/* make sure LESS doesn't pre-calculate */
+			flex-basis: calc(~"50% - 15px");
+			margin: 7px;
+			border-radius: 4px;
+    	padding: 5px;
 		}
 		img {
     		width: 45px;
@@ -128,29 +156,32 @@
 
 	.section {border-left: #eee 5px solid; padding-left: 15px;}
 
-	footer {
-			background: @bg-tan;
-			color: @gray-dark;
-			.linkslist {
-				li {list-style: none; line-height: 2em;}
-				a {color: @gray-dark;}
-			}
-			.social li a {
-				background-image: url("../img/social-sprite.png");
-				background-repeat: no-repeat;
-				padding-left: 40px;
-				line-height: 30px;
-				display: block;
-			}
-			.fb {background-position: 0 0px;}
-			.tw {background-position: 0 -30px;}
-			.yt {background-position: 0 -60px;}
-			.sc {background-position: 0 -90px;}
-			.en {background-position: 0 -120px;}
-			.ig {background-position: 0 -150px;}
-			.more {background-position: 0 -300px;}
-			#footer-main {margin: 0px;}
+  footer {
+		.social {text-align: center;}
+		.social li {display:inline-block;}
+		.social li a {
+			background-image: url("../img/social-icons.png");
+			background-repeat: no-repeat;
+			padding-left: 35px;
+			line-height: 35px;
+			display: inline-block;
+			text-indent: -9999px;
+			transition: .25s;
 		}
+		.sc {background-position: 0px 0px;}
+		.sc:hover,.sc:focus {background-position: 0px -40px; background-color: #0073aa;}
+		.fb {background-position: -40px 0px;}
+		.fb:hover,.fb:focus {background-position: -40px -40px; background-color: #3b5998;}
+    .ig {background-position: -80px 0px;}
+		.ig:hover,.ig:focus {background-position: -80px -40px; background-color: #C13584;}
+		.tw {background-position: -120px 0px;}
+		.tw:hover,.tw:focus {background-position: -120px -40px; background-color: #1da1f2;}
+		.yt {background-position: -160px 0px;}
+		.yt:hover,.yt:focus {background-position: -160px -40px; background-color: #c4302b;}
+		.more {background-position: -200px 0px;}
+		.more:hover,.more:focus {background-position: -200px -40px; background-color: #888;}
+		#footer-main {margin: 0px;}
+	}
 	ul {padding-left: 0;}
 }
 
@@ -172,7 +203,10 @@
 		.row_3 p, .row_6 p {text-align: center;}
 		#services {
 			div {
-	    		flex: 0 0 25%;
+				flex-grow: 0;
+				flex-shrink: 0;
+				/* make sure LESS doesn't pre-calculate */
+				flex-basis: calc(~"25% - 15px");
 			}
 			p.desc {display: block;}
 			img {
